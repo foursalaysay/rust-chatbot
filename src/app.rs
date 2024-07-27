@@ -13,32 +13,15 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="leptos" href="/pkg/chatbot.css"/>
 
         // sets the document title
-        <Title text="Welcome to Leptos"/>
+        <Title text="Rusty Llama"/>
+        <ChatArea />
+        <TypeArea />
 
-        // content for this welcome page
-        <Router>
-            <main>
-                <Routes>
-                    <Route path="" view=HomePage/>
-                    <Route path="/*any" view=NotFound/>
-                </Routes>
-            </main>
-        </Router>
+      
     }
 }
 
-/// Renders the home page of your application.
-#[component]
-fn HomePage() -> impl IntoView {
-    // Creates a reactive value to update the button
-    let (count, set_count) = create_signal(0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
 
-    view! {
-        <h1>"Welcome to Leptos!"</h1>
-        <button on:click=on_click>"Click Me: " {count}</button>
-    }
-}
 
 /// 404 - Not Found
 #[component]
