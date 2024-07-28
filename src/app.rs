@@ -1,10 +1,10 @@
+
+mod model;
+
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
-mod model;
-
-use crate::model::conversation::Conversation;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -23,7 +23,6 @@ pub fn App() -> impl IntoView {
         <ChatArea />
         <TypeArea />
 
-      
     }
 }
 
